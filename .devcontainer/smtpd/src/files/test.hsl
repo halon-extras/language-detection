@@ -1,5 +1,4 @@
-echo detect_language("This is a text in english");
-echo detect_language("Detta är en text på svenska");
+echo detect_language("This is a text in English");
 
 try {
     echo detect_language(none);
