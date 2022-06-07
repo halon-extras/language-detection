@@ -35,6 +35,5 @@ The language as a string.
 **Example**
 
 ```
-echo detect_language("This is a text in english"); // "English"
-echo detect_language("Detta är en text på svenska"); // "Swedish"
+echo detect_language("This is a text in English"); // "English"
 ```
