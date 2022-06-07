@@ -30,7 +30,7 @@ Detect the language of a string.
 
 **Returns**
 
-The language as a string.
+The language as a string. On error an exception will be thrown.
 
 **Example**
 
