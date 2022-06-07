@@ -1,0 +1,8 @@
+echo detect_language("This is a text in english");
+echo detect_language("Detta är en text på svenska");
+
+try {
+    echo detect_language(none);
+} catch ($error) {
+    echo $error->toString();
+}
