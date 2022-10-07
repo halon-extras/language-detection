@@ -35,5 +35,6 @@ The language as a string. On error an exception will be thrown.
 **Example**
 
 ```
+import { detect_language } from "extras://language-detection";
 echo detect_language("This is a text in English"); // "English"
 ```

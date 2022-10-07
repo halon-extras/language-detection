@@ -61,5 +61,6 @@ func detect_language(hhc *C.HalonHSLContext, args *C.HalonHSLArguments, ret *C.H
 func Halon_hsl_register(hhrc *C.HalonHSLRegisterContext) C.bool {
 	detect_language_cs := C.CString("detect_language")
 	C.HalonMTA_hsl_register_function(hhrc, detect_language_cs, nil)
+	C.HalonMTA_hsl_module_register_function(hhrc, detect_language_cs, nil)
 	return true
 }
