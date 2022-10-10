@@ -20,6 +20,8 @@ yum install halon-extras-language-detection
 
 ## Exported functions
 
+These functions needs to be [imported](https://docs.halon.io/hsl/structures.html#import) from the `extras://language-detection` module path.
+
 ### detect_language(text)
 
 Detect the language of a string.
