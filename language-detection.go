@@ -14,10 +14,14 @@ import (
 
 func main() {}
 
-func GetArgumentAsString(args *C.HalonHSLArguments, pos uint64) (string, error) {
+func GetArgumentAsString(args *C.HalonHSLArguments, pos uint64, required bool) (string, error) {
 	var x = C.HalonMTA_hsl_argument_get(args, C.ulong(pos))
 	if x == nil {
-		return "", fmt.Errorf("missing argument at position %d", pos)
+		if required {
+			return "", fmt.Errorf("missing argument at position %d", pos)
+		} else {
+			return "", nil
+		}
 	}
 	var y *C.char
 	if C.HalonMTA_hsl_value_get(x, C.HALONMTA_HSL_TYPE_STRING, unsafe.Pointer(&y), nil) {
@@ -54,7 +58,7 @@ func Halon_init(hic *C.HalonInitContext) C.bool {
 
 //export detect_language
 func detect_language(hhc *C.HalonHSLContext, args *C.HalonHSLArguments, ret *C.HalonHSLValue) {
-	text, err := GetArgumentAsString(args, 0)
+	text, err := GetArgumentAsString(args, 0, true)
 	if err != nil {
 		SetException(hhc, err.Error())
 		return
