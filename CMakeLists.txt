@@ -45,7 +45,7 @@ ENDIF()
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/language-detection.so DESTINATION plugins)
 INSTALL(FILES language-detection.functions.json DESTINATION share/plugins)
 
-INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/sbom.json" DESTINATION /opt/halon/share/sbom RENAME ${PROJECT_NAME}.json)
+INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/sbom.json" DESTINATION share/sbom/plugins RENAME ${PROJECT_NAME}.json)
 
 IF(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.14.0") 
 	FILE(CREATE_LINK "/opt/halon/plugins/language-detection.so" "${CMAKE_CURRENT_BINARY_DIR}/language-detection.so.link" SYMBOLIC)
