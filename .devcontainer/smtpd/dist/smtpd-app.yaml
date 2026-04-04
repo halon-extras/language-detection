@@ -2,6 +2,16 @@ resolver:
   cache:
     size: 10000
 scripting:
+  files:
+  - data: |-
+      echo detect_language("This is a text in English");
+
+      try {
+          echo detect_language(none);
+      } catch ($error) {
+          echo $error->toString();
+      }
+    id: test.hsl
   hooks:
     eod:
     - data: |
